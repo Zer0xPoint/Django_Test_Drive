@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
     <title>
-        {% block title %}
+        {% block title %} {# 定义一个区块 子模版可以自定义区块内容 #}
         {% endblock %}
     </title>
     <link href="{% static "css/blog.css" %}" rel="stylesheet">
 </head>
 <body>
     <div id="content">
-        {% block content %}
+        {% block content %} {# 另一个区块 #}
         {% endblock %}
     </div>
     <div id="sidebar">

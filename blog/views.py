@@ -3,7 +3,7 @@ from .models import Post
 
 
 def post_list(request):
-    posts = Post.published.all()
+    posts = Post.published.all()  # 调用自制管理器
     return render(request,
                   'blog/post/list.html',
                   {'post': posts}, )
