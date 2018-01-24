@@ -25,7 +25,7 @@ class Post(models.Model):
     object = models.Manager()  # 默认管理器
     published = PublishedManager()  # 自建的管理器
 
-    def get_absolute_url(self):
+    def get_absolute_url(self):  # 返回一个对象的标准url
         return reverse('blog:post_detail',
                        args=[self.publish.year,
                              self.publish.strftime('%m'),

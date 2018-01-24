@@ -2,7 +2,7 @@
 {% block title %}My Blog{% endblock %}  {# 自定义标题块 #}
 {% block content %} {# 自定义内容块 #}
     <h1>MyBlog</h1>
-    {% for post in posts %} {# 迭代显示posts中内容 #}
+    {% for post in posts %} {# 迭代posts中内容 #}
         <h2>
             <a href="{{ post.get_absolute_url }}">
                 {{ post.title }}
@@ -12,5 +12,6 @@
             Published {{ post.publish }} by {{ post.author }}
         </p>
         {{ post.body|truncatewords:30|linebreaks }} {# 模版过滤器 控制显示字数30字|转换换行符为HTML换行符  将应用到上一个输出生成的结果上 #}
+        {% include "pagination.html" with page=posts %} {# 将分页模版包含在区块中 #}
     {% endfor %}
 {% endblock %}
